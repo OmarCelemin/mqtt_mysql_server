@@ -1,3 +1,6 @@
+const express = require("express");
+const app = express();
+app.use(express.static(__dirname));
 const mqtt = require("mqtt");
 const mysql = require("mysql2");
 
@@ -59,4 +62,8 @@ client.on("message", (topic, message) => {
         humidity = null;
         fanStatus = null;
     }
+});
+
+app.listen(3000, () => {
+    console.log("Servidor web iniciado");
 });
