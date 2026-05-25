@@ -37,7 +37,7 @@ client.on("message", (topic, message) => {
     if(topic === "stationESP32C6/fanStatus")
     {
         fanStatus = parseInt(message.toString());
-
+    }
     if(temperature !== null && humidity !== null && fanStatus !== null)
     {
         db.query(
