@@ -1,4 +1,7 @@
 process.env.TZ = "America/Bogota";
+console.log("Hora:", new Date());
+console.log("TZ:", Intl.DateTimeFormat().resolvedOptions().timeZone);
+
 const mqtt = require("mqtt");
 const mysql = require("mysql2");
 
