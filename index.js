@@ -1,3 +1,4 @@
+process.env.TZ = "America/Bogota";
 const mqtt = require("mqtt");
 const mysql = require("mysql2");
 
