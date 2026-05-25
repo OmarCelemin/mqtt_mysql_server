@@ -38,15 +38,19 @@ client.on("message", (topic, message) => {
     {
         fanStatus = parseInt(message.toString());
     }
-    if(temperature !== null && humidity !== null && fanStatus !== null)
+
+    if(temperature !== null &&
+       humidity !== null &&
+       fanStatus !== null)
     {
         db.query(
             "INSERT INTO dht11_data (temperature, humidity, fanStatus) VALUES (?, ?, ?)",
             [temperature, humidity, fanStatus],
             (err) => {
+
                 if(err)
                 {
-                    console.log("INSERT ERROR",err);
+                    console.log("INSERT ERROR", err);
                 }
                 else
                 {
